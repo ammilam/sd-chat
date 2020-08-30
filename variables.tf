@@ -21,7 +21,7 @@ variable "location" {
 variable "runtime" {
   type        = string
   default     = "nodejs10"
-  description = "Runtime environment for the cloud function"  
+  description = "Runtime environment for the cloud function"
 }
 
 variable "function_name" {
@@ -34,7 +34,7 @@ variable "function_name" {
 variable "source_dir" {
   type        = string
   description = "Name of the directory with Function Code"
-  default = "function"
+  default     = "function"
 }
 
 variable "env_variables" {
@@ -50,13 +50,13 @@ variable "entry_point" {
 
 variable "memory_size_mb" {
   type        = string
-  description = "Memory of the cloud function in MB" 
+  description = "Memory of the cloud function in MB"
   default     = 128
 }
 
 variable "timeout" {
   type        = string
-  description = "Maximum amount of time your cloud function can run in seconds."  
+  description = "Maximum amount of time your cloud function can run in seconds."
   default     = 60
 }
 
