@@ -32,6 +32,15 @@ resource "google_cloudfunctions_function" "cloud_function" {
   max_instances         = var.max_instances
 }
 
+resource "google_cloudfunctions_function_iam_member" "invoker" {
+  project        = google_cloudfunctions_function.cloud_function.project
+  region         = google_cloudfunctions_function.cloud_function.region
+  cloud_function = google_cloudfunctions_function.cloud_function.name
+
+  role   = "roles/cloudfunctions.invoker"
+  member = "allUsers"
+}
+
 resource "google_logging_metric" "logging_metric" {
   name    = "flux"
   project = var.project
